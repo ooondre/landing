@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@iconify-json/lucide':
         specifier: ^1.2.106
-        version: 1.2.106
+        version: 1.2.107
       '@iconify-json/simple-icons':
         specifier: ^1.2.81
-        version: 1.2.81
+        version: 1.2.82
       '@nuxt/content':
         specifier: ^3.13.0
         version: 3.13.0(better-sqlite3@12.9.0)(magicast@0.5.2)
@@ -31,7 +31,7 @@ importers:
         version: 4.4.5(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.33)(better-sqlite3@12.9.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.9.0))(eslint@10.3.0(jiti@2.6.1))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.2))(rollup@4.60.2)(srvx@0.11.15)(terser@5.46.2)(typescript@6.0.3)(vite@7.3.2(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.2)(yaml@2.8.3))(vue-tsc@3.2.8(typescript@6.0.3))(yaml@2.8.3)
       shaders:
         specifier: ^2.5.117
-        version: 2.5.117(vue@3.5.33(typescript@6.0.3))
+        version: 2.5.120(vue@3.5.33(typescript@6.0.3))
       tailwindcss:
         specifier: ^4.3.0
         version: 4.3.0
@@ -634,11 +634,11 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/lucide@1.2.106':
-    resolution: {integrity: sha512-5nuejHR29A0iQjvLZRRPtuMyj1DA9pzcDMuHD4vmhG7GgLen8haMKiZcZ1IpKVZDwR8wxfcbCv9MsoWHBBAa+g==}
+  '@iconify-json/lucide@1.2.107':
+    resolution: {integrity: sha512-Q4JmCICVwHqaGhB3ugDFdb4uGXuU/o8OJrJuo1YjeZhGeT3jX5fc//7qMNsCb10VuL2PVDM/CkaqO9chnmI3gg==}
 
-  '@iconify-json/simple-icons@1.2.81':
-    resolution: {integrity: sha512-Utjw4sPtoVdbpAQAkC4O0cYpt4ehQZYr6aFHhmvdeW8mQwkINyAe0ogTPqNptSSKogZ2lfgXM8zpuhO961Wnng==}
+  '@iconify-json/simple-icons@1.2.82':
+    resolution: {integrity: sha512-4p978qHx8eD/QBOhgBzp/p7uS3OO2KCnVpFPJTUvuhuDXv1Hr4RcxcZ5MWc6ptkf/3Dlb1xb23068OtPyx10mA==}
 
   '@iconify/collections@1.0.677':
     resolution: {integrity: sha512-Uwbl1p26Md6m2xTMjalJsmQ43YxW+j6RsyrL5RnxRCHEhwympJlaBBCGTKrqI3sA93g9UVJ/Pxi7zDqM3E1oPw==}
@@ -5071,8 +5071,8 @@ packages:
     engines: {node: '>= 0.10'}
     hasBin: true
 
-  shaders@2.5.117:
-    resolution: {integrity: sha512-9vE3p6RsMhjoUNJ7HQzm89+7eGuxyMX0uCfWYmMsEwadq/Da8SgGoYx8ga3arPaYkS0bKj2yhXOi8cKDcHKTgw==}
+  shaders@2.5.120:
+    resolution: {integrity: sha512-hvgGK8A6SreY/Hp3uiog0KbPwmXDprudnmwLZtrJAwr8NLtIr8E1ig44w2/h88zevt47ZnSGTZWcNkyvMon/Dw==}
     peerDependencies:
       pixi.js: ^8.0.0
       react: ^18.0.0 || ^19.0.0
@@ -6450,11 +6450,11 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@iconify-json/lucide@1.2.106':
+  '@iconify-json/lucide@1.2.107':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.81':
+  '@iconify-json/simple-icons@1.2.82':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -11806,7 +11806,7 @@ snapshots:
       safe-buffer: 5.2.1
       to-buffer: 1.2.2
 
-  shaders@2.5.117(vue@3.5.33(typescript@6.0.3)):
+  shaders@2.5.120(vue@3.5.33(typescript@6.0.3)):
     dependencies:
       three: 0.184.0
     optionalDependencies:
