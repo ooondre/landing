@@ -13,31 +13,23 @@ import { Shader, Pixelate, Plasma, SineWave } from 'shaders/vue'
         inputMax: 1,
         inputMin: 0,
         outputMax: 1,
-        outputMin: 0.16
+        outputMin: 0.26
       }"
-      :roundness="0.2"
-      :scale="68"
+      :roundness="0.9"
+      :scale="220"
       :transform="{ rotation: 180 }"
     >
-      <Plasma
-        :balance="57"
-        color-a="#c8f031"
-        color-b="#09090b"
-        :contrast="1.6"
-        :density="3.3"
-        :intensity="1.8"
-        :visible="true"
-      />
+      <Plasma :balance="97" color-a="#9CDCFE" color-b="#888888" :contrast="0.6" :density="1.3" :intensity="61.8" :visible="true" />
     </Pixelate>
     <SineWave
       id="idmmbhthud5inxgebqc"
-      :amplitude="0.1"
+      :amplitude="0.111"
       :position="{
         x: 0.5,
-        y: 1
+        y: 0.9
       }"
-      :softness="0.8"
-      :thickness="0.7"
+      :softness="0.8899"
+      :thickness="0.87"
       :visible="false"
     />
   </Shader>

@@ -1,116 +1,90 @@
 seo:
-  title: Nuxt Landing Template
-  description: A beautiful and customizable landing page template built with Nuxt UI. Features hero section, animated terminal, metrics, and CTA — ready to deploy.
-title: "Observe less.\nUnderstand more."
-description: Map your entire system in real-time, surface anomalies before they cascade, and eliminate the dashboards you never needed.
+  title: Inspectors Toolkit — All your inspection tools in one app
+  description: Inspectors Toolkit brings checklists, photo capture, measurements, scheduling, and report generation into a single mobile app built for professional home and building inspectors. Free trial and app store download links.
+title: "Inspectors Toolkit\nAll your tools, one app"
+description: Built for professional home, building, and specialty inspectors — streamline inspections, capture evidence, and create client-ready reports in minutes.
 hero:
-  headline: "v2.0 — Now with predictive alerting"
+  headline: 'Launch faster. Inspect smarter.'
   links:
-    - label: Start for free
+    - label: Download from the App Store
       color: primary
       size: xl
       to: '#'
-    - label: View demo
+      icon: 'ic:baseline-apple'
+    - label: Get it on Google Play Store
       size: xl
       color: neutral
       variant: soft
       to: '#'
-terminal:
-  lines:
-    - segments:
-        - text: "$ "
-          style: prompt
-        - text: "npx telemetry"
-          style: cmd
-        - text: " init"
-          style: flag
-    - segments:
-        - text: "→ Scanning service topology..."
-          style: dim
-    - segments:
-        - text: "→ Found "
-          style: dim
-        - text: "23 services"
-          style: cmd
-        - text: ", "
-          style: dim
-        - text: "847 endpoints"
-          style: cmd
-        - text: ", "
-          style: dim
-        - text: "12 databases"
-          style: cmd
-    - segments:
-        - text: "→ Deploying collector agents "
-          style: dim
-        - text: "✓"
-          style: success
-    - segments:
-        - text: "→ Baseline established in "
-          style: dim
-        - text: "340ms"
-          style: metric-good
-    - segments:
-        - text: " "
-          style: dim
-    - segments:
-        - text: "✓ Live at "
-          style: success
-        - text: "https://app.example.com/acme-corp"
-          style: url
+      icon: 'mage:playstore'
 logos:
-  title: Trusted by engineering teams at
+  title: Trusted by inspection teams at
   items:
-    - i-simple-icons-vercel
-    - i-simple-icons-github
-    - i-simple-icons-linear
-    - i-simple-icons-supabase
-    - i-simple-icons-stripe
+    - i-simple-icons-architect
+    - i-simple-icons-homeassistant
+    - i-simple-icons-google
+    - i-simple-icons-aws
 features:
-  headline: Capabilities
-  title: "Every signal, one surface."
-  description: No more tab-switching between metrics, traces, and logs. Correlate everything into a single explorable topology.
+  headline: What inspectors need
+  title: 'Everything an inspector needs on-site'
+  description: From pre-built checklists to offline photo annotation and fast report generation — Inspectors Toolkit is designed around common inspection workflows.
   items:
-    - icon: i-lucide-zap
-      title: Predictive Alerts
-      description: ML models trained on your baselines detect anomalies 4 minutes before they hit your SLOs.
-    - icon: i-lucide-radar
-      title: Topology Mapping
-      description: Auto-discovers service dependencies with zero config. See how a deploy in auth-service ripples through checkout.
-    - icon: i-lucide-layers
-      title: Unified Telemetry
-      description: "Logs, metrics, and traces in one query language. Stop context-switching. Start correlating."
-    - icon: i-lucide-git-commit-horizontal
-      title: Deploy Tracking
-      description: Every deploy is automatically correlated with performance changes. Know which commit caused the regression.
-    - icon: i-lucide-filter
-      title: Smart Sampling
-      description: "AI-driven sampling retains interesting traces and drops noise. Cut storage costs 10× without losing signal."
-    - icon: i-lucide-notebook-pen
-      title: Team Notebooks
-      description: Collaborative investigation notebooks that turn incident debugging into reusable runbooks.
+    - icon: i-lucide-clipboard
+      title: Custom Checklists & Templates
+      description: Create, import, and reuse inspection templates for every property type — save time and ensure consistency.
+    - icon: i-lucide-camera
+      title: Photo Capture & Annotation
+      description: High-resolution photo capture, automatic timestamp/GPS, and inline annotations for precise evidence.
+    - icon: i-lucide-ruler
+      title: Measurements & Tools
+      description: Built-in measurement tools, unit conversions, and integrations for laser distance devices.
+    - icon: i-lucide-file-text
+      title: Fast Report Generation
+      description: Generate professional, customizable PDF reports with photos, notes, and easy signing.
+    - icon: i-lucide-calendar
+      title: Scheduling & Client Management
+      description: Bookings, client contacts, and calendars — sync with Google Calendar and export jobs.
+    - icon: i-lucide-wifi-off
+      title: Offline Mode
+      description: Work without connectivity — data syncs automatically when back online.
+    - icon: i-lucide-shield-check
+      title: Standards & Code References
+      description: Link to local codes, standards, and inspector notes so you never miss a compliance item.
+    - icon: i-lucide-credit-card
+      title: Invoicing & Payments
+      description: Create invoices from inspection reports and accept payments directly from clients.
+    - icon: i-lucide-user-check
+      title: Inspector Profiles & Certifications
+      description: Manage inspector qualifications, certifications, and access levels — attach credentials to generated reports.
 metrics:
-  headline: By the numbers
-  title: "Built for scale you haven't hit yet."
-  description: Process billions of events per day across thousands of production environments with an architecture designed for the workloads of 2030.
+  headline: Inspector Insights
+  title: 'Key inspection metrics at a glance'
+  description: Track productivity and quality across jobs with essential stats that help run a profitable inspection business.
   items:
-    - value: "99.99%"
-      label: Uptime SLA
-      class: "text-success"
-    - value: "<50ms"
-      label: P99 query
-      class: "text-primary"
-    - value: "14B+"
-      label: Events / day
-      class: "text-info"
-    - value: "4 min"
-      label: Early warning
-      class: "text-warning"
+    - value: '1,248'
+      label: Inspections completed
+      class: 'text-primary'
+    - value: '12m'
+      label: Avg. report time
+      class: 'text-success'
+    - value: '98%'
+      label: Client satisfaction
+      class: 'text-info'
+    - value: 'Offline'
+      label: Offline-capable
+      class: 'text-warning'
 cta:
-  title: "Ready to stop\nfirefighting?"
-  description: Free for up to 5 services. No credit card. Deploys in under a minute.
-  command: npx telemetry init
+  title: 'Start inspecting smarter'
+  description: Try Inspectors Toolkit free for 14 days. Mobile apps coming to the App Store and Google Play.
   links:
-    - label: Start for free
+    - label: Download from the App Store
       color: primary
+      size: xl
       to: '#'
+      icon: 'ic:baseline-apple'
+    - label: Get it on Google Play Store
+      size: xl
+      color: neutral
+      variant: soft
+      to: '#'
+      icon: 'mage:playstore'

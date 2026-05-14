@@ -2,35 +2,35 @@
 import { motion } from 'motion-v'
 import type { VariantType } from 'motion-v'
 
+// load header content so we can show hero links in a store picker modal
+const { data: headerPage } = await useAsyncData('header-page', () => queryCollection('content').first())
+const storeOpen = ref(false)
+const storeLinks = computed(() => headerPage.value?.hero?.links || [])
+
 const nuxtApp = useNuxtApp()
 const activeSection = ref<string>()
 
 const items = computed(() => [
   {
-    label: 'Features',
-    to: '#features',
-    exactHash: true,
-    active: activeSection.value === 'features'
-  },
-  {
-    label: 'Metrics',
-    to: '#metrics',
-    exactHash: true,
-    active: activeSection.value === 'metrics'
+    label: 'Contact',
+    to: '/contact'
   }
 ])
 
 nuxtApp.hooks.hookOnce('page:loading:end', () => {
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries.find(e => e.isIntersecting)
-    if (visible) {
-      activeSection.value = visible.target.id
-    } else if (entries.every(e => !e.isIntersecting)) {
-      activeSection.value = undefined
-    }
-  }, { rootMargin: '-50% 0px -50% 0px' })
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.find((e) => e.isIntersecting)
+      if (visible) {
+        activeSection.value = visible.target.id
+      } else if (entries.every((e) => !e.isIntersecting)) {
+        activeSection.value = undefined
+      }
+    },
+    { rootMargin: '-50% 0px -50% 0px' }
+  )
 
-  document.querySelectorAll('#features, #metrics').forEach(el => observer.observe(el))
+  document.querySelectorAll('#features, #insights').forEach((el) => observer.observe(el))
 })
 
 const variants: Record<string, VariantType | ((custom: unknown) => VariantType)> = {
@@ -56,34 +56,16 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 </script>
 
 <template>
-  <UHeader>
-    <template #left>
-      <NuxtLink to="/">
-        <AppLogo class="h-6 w-auto shrink-0" />
-      </NuxtLink>
-
-      <TemplateMenu />
+  <UHeader mode="drawer" :menu="{ direction: 'top' }">
+    <template #title>
+      <!-- explicit home link: navigates to / and lets the index page load the canonical index content -->
+      <NuxtLink to="/" class="text-lg font-semibold no-underline"> Inspector's Toolkit </NuxtLink>
     </template>
-
-    <UNavigationMenu
-      :items="items"
-      variant="link"
-    />
+    <!-- <UNavigationMenu :items="items" variant="link" /> -->
 
     <template #right>
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="ghost"
-        class="hidden lg:flex"
-      />
-      <UButton
-        label="Get started"
-        color="neutral"
-        class="hidden lg:flex"
-        to="https://ui.nuxt.com"
-        target="_blank"
-      />
+      <UButton to="/contact" label="Contact" variant="outline" class="hidden lg:flex" />
+      <UButton @click="storeOpen = true" label="Download App" color="primary" class="hidden lg:flex" />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
@@ -107,60 +89,37 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <motion.line
-            x1="4"
-            y1="6"
-            x2="20"
-            y2="6"
-            :variants="variants"
-            :animate="open ? 'close' : 'normal'"
-            :custom="1"
-            class="outline-none"
-          />
-          <motion.line
-            x1="4"
-            y1="12"
-            x2="20"
-            y2="12"
-            :variants="variants"
-            :animate="open ? 'close' : 'normal'"
-            :custom="2"
-            class="outline-none"
-          />
-          <motion.line
-            x1="4"
-            y1="18"
-            x2="20"
-            y2="18"
-            :variants="variants"
-            :animate="open ? 'close' : 'normal'"
-            :custom="3"
-            class="outline-none"
-          />
+          <motion.line x1="4" y1="6" x2="20" y2="6" :variants="variants" :animate="open ? 'close' : 'normal'" :custom="1" class="outline-none" />
+          <motion.line x1="4" y1="12" x2="20" y2="12" :variants="variants" :animate="open ? 'close' : 'normal'" :custom="2" class="outline-none" />
+          <motion.line x1="4" y1="18" x2="20" y2="18" :variants="variants" :animate="open ? 'close' : 'normal'" :custom="3" class="outline-none" />
         </svg>
       </UButton>
     </template>
 
     <template #body>
-      <UNavigationMenu
+      <!-- <UNavigationMenu
         :items="items"
         orientation="vertical"
-      />
+        :highlight="true"
+        :ui="{
+          linkLabel: 'text-lg',
+          link: 'px-0'
+        }"
+      /> -->
 
       <div class="mt-4 flex flex-col gap-2">
-        <UButton
-          label="Sign in"
-          color="neutral"
-          variant="soft"
-          block
-        />
-        <UButton
-          label="Get started"
-          block
-          to="https://ui.nuxt.com"
-          target="_blank"
-        />
+        <UButton to="/contact" class="mb-8" variant="link" color="neutral" label="Contact Us" block />
+        <UButton variant="outline" label="Download from Google Play Store" icon="mage:playstore" block />
+        <UButton variant="solid" label="Download from App Store" icon="ic:baseline-apple" block />
       </div>
     </template>
+
+    <UModal v-model:open="storeOpen" :title="'Get the app'">
+      <template #content>
+        <div class="grid gap-3 p-8">
+          <UButton v-for="link in storeLinks" :key="link.label" v-bind="link" />
+        </div>
+      </template>
+    </UModal>
   </UHeader>
 </template>

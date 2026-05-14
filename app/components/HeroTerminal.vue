@@ -13,12 +13,12 @@ const { lines } = defineProps<{
 }>()
 
 const segmentStyles: Record<string, string> = {
-  'prompt': 'text-muted',
-  'cmd': 'text-highlighted',
-  'flag': 'text-primary',
-  'dim': 'text-muted',
-  'success': 'text-success',
-  'url': 'text-info',
+  prompt: 'text-muted',
+  cmd: 'text-highlighted',
+  flag: 'text-primary',
+  dim: 'text-muted',
+  success: 'text-success',
+  url: 'text-info',
   'metric-good': 'text-primary'
 }
 
@@ -39,17 +39,9 @@ function lineMotion(index: number) {
       <span class="size-2.5 rounded-full border border-default bg-muted" />
     </div>
 
-    <div class="min-h-[200px] p-5 font-mono text-[13px] leading-[1.8] sm:p-6">
-      <Motion
-        v-for="(line, lineIndex) in lines"
-        :key="lineIndex"
-        v-bind="lineMotion(lineIndex)"
-      >
-        <span
-          v-for="(segment, segIndex) in line.segments"
-          :key="segIndex"
-          :class="segmentStyles[segment.style]"
-        >
+    <div class="min-h-50 p-5 font-mono text-[13px] leading-[1.8] sm:p-6">
+      <Motion v-for="(line, lineIndex) in lines" :key="lineIndex" v-bind="lineMotion(lineIndex)">
+        <span v-for="(segment, segIndex) in line.segments" :key="segIndex" :class="segmentStyles[segment.style]">
           {{ segment.text }}
         </span>
       </Motion>

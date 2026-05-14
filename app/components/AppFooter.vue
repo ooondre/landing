@@ -1,37 +1,35 @@
 <script setup lang="ts">
 const links = [
-  { label: 'Docs', to: 'https://ui.nuxt.com', target: '_blank' },
-  { label: 'GitHub', to: 'https://github.com/nuxt/ui', target: '_blank' },
-  { label: 'Twitter', to: 'https://twitter.com/nuxt_js', target: '_blank' },
-  { label: 'Status', to: '#' },
-  { label: 'Privacy', to: '#' }
+  { label: 'Email', to: '#' },
+  { label: 'Instagram', to: '#' }
+]
+const legalLinks = [
+  { label: 'Privacy Policy', to: '/privacy' }
+  // { label: 'Terms of Service', to: '#' }
 ]
 </script>
 
 <template>
   <UFooter
     :ui="{
-      container: 'border-t border-default lg:py-8',
+      root: 'border-t border-default lg:py-2',
       right: 'gap-x-0 flex-wrap'
     }"
   >
     <template #left>
-      <p class="text-sm text-dimmed">
-        Built with Nuxt UI • © {{ new Date().getFullYear() }}
-      </p>
+      <UButton v-for="link in legalLinks" :key="link.label" :label="link.label" :to="link.to" color="neutral" variant="link" class="font-light" size="md" />
     </template>
 
     <template #right>
-      <UButton
-        v-for="link in links"
-        :key="link.label"
-        :label="link.label"
-        :to="link.to"
-        color="neutral"
-        variant="link"
-        class="font-light"
-        size="sm"
-      />
+      <div class="flex flex-col gap-2">
+        <div>
+          <UButton v-for="link in links" :key="link.label" :label="link.label" :to="link.to" color="neutral" variant="link" class="font-light" size="md" />
+        </div>
+      </div>
+    </template>
+
+    <template #bottom>
+      <p class="text-xs text-dimmed text-center px-4">© {{ new Date().getFullYear() }} Inspector's Toolkit</p>
     </template>
   </UFooter>
 </template>

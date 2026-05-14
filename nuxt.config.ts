@@ -1,13 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/content',
-    '@nuxt/ui',
-    '@vueuse/nuxt',
-    'motion-v/nuxt'
-  ],
+  modules: ['@nuxt/eslint', '@nuxt/content', '@nuxt/ui', '@vueuse/nuxt', 'motion-v/nuxt', '@nuxt/image', '@nuxtjs/turnstile'],
 
+  runtimeConfig: {
+    mailgun: {
+      apiKey: process.env.MAILGUN_API_KEY,
+      domain: process.env.MAILGUN_DOMAIN,
+      sender: process.env.MAILGUN_SENDER,
+      recipient: process.env.MAILGUN_RECIPIENT
+    },
+    turnstile: {
+      secretKey: process.env.TURNSTILE_SECRET_KEY
+    }
+  },
+  turnstile: {
+    siteKey: process.env.TURNSTILE_SITE_KEY
+  },
   devtools: {
     enabled: true
   },
@@ -30,18 +38,12 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: [
-        '/'
-      ]
+      routes: ['/']
     }
   },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
+  vite: {
+    optimizeDeps: {
+      include: ['shaders/vue']
     }
   }
 })
