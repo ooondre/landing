@@ -103,7 +103,7 @@ function staggerMotion(index: number = 0) {
           <br v-if="heroTitle.secondary" />
           <span
             v-if="heroTitle.secondary"
-            class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent"
+            class="animate-shimmer bg-size-[200%_auto] bg-clip-text text-transparent pr-2"
             :style="{
               backgroundImage:
                 'linear-gradient(135deg, var(--color-sky-800), var(--color-sky-700), var(--color-sky-600), var(--color-sky-500), var(--color-sky-600), var(--color-sky-700), var(--color-sky-800))',
