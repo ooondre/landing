@@ -121,7 +121,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-7xl mx-auto px-8">
+  <div class="max-w-7xl mx-auto px-8 pb-8">
     <UPageHero
       :ui="{
         container: 'relative z-10 py-4 pt-16 sm:py-4 sm:pt-16 md:py-4 md:pt-16 lg:py-4 lg:pt-16 px-0 sm:px-0 lg:px-0',

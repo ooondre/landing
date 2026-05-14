@@ -2,6 +2,11 @@
 const route = useRoute()
 const { width, height } = useWindowSize()
 
+console.log(width)
+onMounted(() => {
+  console.log(width)
+})
+
 // Load the page content, trying several fallbacks to ensure the canonical index is shown.
 const { data: page } = await useAsyncData(
   () => `index:${route.path}`,
@@ -128,16 +133,16 @@ function staggerMotion(index: number = 0) {
     </UPageHero>
 
     <Motion v-bind="enterMotion(0.65)">
-      <template v-if="width > 1440">
+      <template v-if="width !== Infinity && width > 1440">
         <NuxtImg src="/img/mockup-xl.png" class="w-full object-cover" />
       </template>
-      <template v-else-if="width > 1024">
+      <template v-else-if="width !== Infinity && width > 1024">
         <NuxtImg src="/img/mockup-lg.png" class="w-full object-cover" />
       </template>
-      <template v-else-if="width > 500">
+      <template v-else-if="width !== Infinity && width > 500">
         <NuxtImg src="/img/mockup-md.png" class="w-full object-cover" />
       </template>
-      <template v-else>
+      <template v-else-if="width !== Infinity && width < 500">
         <NuxtImg src="/img/mockup-sm.png" class="w-full object-cover" />
       </template>
     </Motion>
